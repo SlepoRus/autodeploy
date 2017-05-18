@@ -84,10 +84,5 @@ var deploy = () => {
     },500);
   });
 }
-http.createServer(function(req,res) {
 
-}).listen(8080);
-deploy();
-setInterval(function() {
-  deploy();
-},90000);
+module.exports = deploy();
