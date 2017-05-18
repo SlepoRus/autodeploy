@@ -2,6 +2,7 @@ const http = require('http');
 const Git = require('nodegit');
 const pathToRepo = require("path").resolve("../basic/interstart/"); //Url здесь
 const log = require('winston');
+const repl = require('repl');
 const rmPick = 0;
 const pass = "";
 const login = "";
@@ -68,6 +69,7 @@ var deploy = () => {
             }).catch(function(err) {
               log.error(err);
             }).done(function() {
+              process.stdout.write('\033c');
               log.info('Все выполнено успешно');
               log.info('Следующий запуск запланирован через 15 минут');
               console.log('-------------------------------------------------------------------------');
